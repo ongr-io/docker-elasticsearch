@@ -1,5 +1,3 @@
-FROM elasticsearch:5.0.2
-ADD elasticsearch.yml /usr/share/elasticsearch/config/
-USER root
-RUN chown elasticsearch:elasticsearch config/elasticsearch.yml
-USER elasticsearch
+FROM docker.elastic.co/elasticsearch/elasticsearch:5.0.2
+
+COPY ./elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
